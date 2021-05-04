@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeId"
+        android:icon="@drawable/ic_home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/bookId"
+        android:icon="@drawable/ic_booking"
+        android:title="Book"/>
+
+    <item
+        android:id="@+id/scanId"
+        android:icon="@drawable/ic_search"
+        android:title="Scan"/>
+
+    <item
+        android:id="@+id/profileId"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile"/>
+
+</menu>

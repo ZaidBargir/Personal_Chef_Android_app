@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151417"
+    tools:context=".Fragments.ProfileFragment">
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="100dp">
+
+        <ImageView
+            android:id="@+id/imgProfilePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/txtUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/bebasneue"
+        android:text="...."
+        android:textColor="#CCC7C2"
+        android:textSize="28sp" />
+
+
+    <TextView
+        android:id="@+id/txtBio"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtUserName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/bebasneue"
+        android:maxLines="3"
+        android:text="........................."
+        android:textAlignment="center"
+        android:textColor="#CCC7C2"
+        android:textSize="20sp" />
+
+
+    <ImageButton
+        android:id="@+id/imgBtnProfileEdit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/custom_button"
+        android:src="@drawable/ic_edit" />
+    <ImageButton
+        android:id="@+id/imgBtnLogout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/imgBtnProfileEdit"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/custom_button"
+        android:src="@drawable/ic_logout" />
+
+    <ImageButton
+        android:id="@+id/imgBtnUserInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txtBio"
+        android:layout_below="@id/cardView"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/txtUserName"
+        android:background="#151417"
+        android:src="@drawable/ic_info" />
+
+
+
+
+
+</RelativeLayout>
