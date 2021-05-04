@@ -9,10 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -29,6 +31,7 @@ class ProfileFragment : Fragment() {
     lateinit var userName: TextView
     lateinit var userBio : TextView
     lateinit var photoUrl : Uri
+    lateinit var relativeLayout: RelativeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,10 +43,13 @@ class ProfileFragment : Fragment() {
         imgProfilePic =view.findViewById(R.id.imgProfilePhoto)
         userName = view.findViewById(R.id.txtUserName)
         userBio = view.findViewById(R.id.txtBio)
+        relativeLayout= view.findViewById(R.id.relativeLayoutProfile)
         val auth = FirebaseAuth.getInstance()
         val db = FirebaseFirestore.getInstance()
         val s= FirebaseStorage.getInstance().reference
         val userId = auth.currentUser?.uid
+
+
         db.collection("Users").document(userId.toString()).get().addOnCompleteListener { task ->
             if (task.result!!.exists()){
                 userName.text = task.result!!.getString("name")

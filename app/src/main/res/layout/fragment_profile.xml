@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#151417"
+    android:id="@+id/relativeLayoutProfile"
     tools:context=".Fragments.ProfileFragment">
 
 
@@ -35,7 +36,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/bebasneue"
-        android:text="...."
+        android:text="your name"
         android:textColor="#CCC7C2"
         android:textSize="28sp" />
 
@@ -49,7 +50,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/bebasneue"
         android:maxLines="3"
-        android:text="........................."
+        android:text="about yourself"
         android:textAlignment="center"
         android:textColor="#CCC7C2"
         android:textSize="20sp" />
