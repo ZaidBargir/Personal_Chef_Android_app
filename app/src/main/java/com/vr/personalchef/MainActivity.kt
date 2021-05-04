@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.frameLayout, BookingFragment())
                         .commit()
                 }
+                R.id.addId -> {
+                    uploadRecipe()
+                }
+
                 R.id.scanId -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frameLayout, ScanFragment())
@@ -50,6 +54,10 @@ class MainActivity : AppCompatActivity() {
             return@setOnNavigationItemSelectedListener true
         }
 
+
+    }
+
+    private fun uploadRecipe() {
 
     }
 

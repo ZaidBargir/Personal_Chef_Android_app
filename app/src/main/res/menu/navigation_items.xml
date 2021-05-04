@@ -12,6 +12,12 @@
         android:title="Book"/>
 
     <item
+        android:id="@+id/addId"
+        android:icon="@drawable/ic_add"
+        android:title="Add"/>
+
+
+    <item
         android:id="@+id/scanId"
         android:icon="@drawable/ic_search"
         android:title="Scan"/>
