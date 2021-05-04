@@ -37,7 +37,8 @@ class MainActivity : AppCompatActivity() {
                         .commit()
                 }
                 R.id.addId -> {
-                    uploadRecipe()
+                    val i = Intent(this@MainActivity,RecipeUploaderActivity::class.java)
+                    startActivity(i)
                 }
 
                 R.id.scanId -> {
@@ -57,9 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun uploadRecipe() {
 
-    }
 
     override fun onBackPressed() {
         finishAffinity()

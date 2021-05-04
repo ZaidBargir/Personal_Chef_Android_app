@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#151417"
     tools:context=".RecipeUploaderActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:lottie_autoPlay="true"
+        android:layout_centerHorizontal="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/chef1" />
+
+
+    <TextView
+        android:id="@+id/txtUploadDishPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animationView"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/swansea"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="true"
+        android:text="Upload Your dish Photo"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/imgDishPhotoUpload"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/dish_upload_window"
+        android:padding="20dp"
+        android:src="@drawable/upload_file"
+        android:layout_below="@id/txtUploadDishPhoto"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:id="@+id/btnNextToDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/next_button"
+        android:fontFamily="@font/swansea"
+        android:text="NEXT"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>
