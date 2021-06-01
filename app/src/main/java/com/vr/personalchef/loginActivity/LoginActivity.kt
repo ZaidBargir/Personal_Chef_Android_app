@@ -11,17 +11,15 @@ import com.vr.personalchef.R
 
 class LoginActivity : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
 
         val providers = arrayListOf(
             AuthUI.IdpConfig.PhoneBuilder().build(),
             AuthUI.IdpConfig.GoogleBuilder().build()
         )
+
         startActivityForResult(
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
@@ -32,7 +30,6 @@ class LoginActivity : AppCompatActivity() {
                 .build(),
             123
         )
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -45,7 +42,6 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this@LoginActivity, "Login Failed", Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 

@@ -3,12 +3,12 @@ package com.vr.personalchef
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.FrameLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.vr.personalchef.Fragments.BookingFragment
 import com.vr.personalchef.Fragments.HomeFragment
 import com.vr.personalchef.Fragments.ProfileFragment
 import com.vr.personalchef.Fragments.ScanFragment
+import com.vr.personalchef.GettingRecipeDetails.RecipeUploaderActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                         .commit()
                 }
                 R.id.addId -> {
-                    val i = Intent(this@MainActivity,RecipeUploaderActivity::class.java)
+                    val i = Intent(this@MainActivity, RecipeUploaderActivity::class.java)
                     startActivity(i)
                 }
 

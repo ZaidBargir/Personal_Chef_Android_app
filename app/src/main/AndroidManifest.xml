@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalChef">
-        <activity android:name=".RecipeUploaderActivity"></activity>
+        <activity android:name=".GettingRecipeDetails.RecipeStepUploadActivity"></activity>
+        <activity android:name=".GettingRecipeDetails.RecipeUploaderActivity" />
         <activity android:name=".ChefDetails.ChefDetailActivity" />
         <activity android:name=".loginActivity.LoginActivity">
             <intent-filter>
