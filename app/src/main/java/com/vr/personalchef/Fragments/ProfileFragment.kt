@@ -13,12 +13,10 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.vr.personalchef.ChefDetails.ChefDetailActivity
+import com.vr.personalchef.ChefDetails.ChefBasicDetailActivity
 import com.vr.personalchef.R
 import com.vr.personalchef.loginActivity.LoginActivity
 
@@ -64,7 +62,7 @@ class ProfileFragment : Fragment() {
         }
 
         btnProfileEdit.setOnClickListener {
-            goToActivity(ChefDetailActivity())
+            goToActivity(ChefBasicDetailActivity())
         }
         btnLogout.setOnClickListener {
             auth.signOut()
