@@ -63,6 +63,7 @@ class ChefBasicDetailActivity : AppCompatActivity() {
             userBasicDetails["phone"] = etPhoneNumber.text.toString()
             userBasicDetails["bio"] = etUserBio.text.toString()
             userBasicDetails["email"] = etUserEmail.text.toString()
+            userBasicDetails["country"] = ""
 
             db.collection("Users").document(currentUser.toString()).set(userBasicDetails)
                 .addOnCompleteListener { task ->
@@ -72,7 +73,6 @@ class ChefBasicDetailActivity : AppCompatActivity() {
                         Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                     }
                 }
-
         }
     }
 
