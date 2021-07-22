@@ -1,28 +1,43 @@
 package com.vr.personalchef.ChefDetails
 
 import android.os.Bundle
-import android.view.View
 import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import com.vr.personalchef.Fragments.ProfileFragment
 import com.vr.personalchef.R
 
 
-class ChefLocationActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class ChefLocationActivity : AppCompatActivity() {
 
 
-    lateinit var adapter: ArrayAdapter<String>
-    var  spinnerDataList = ArrayList<String>()
-    lateinit var selectedCountry : String
-    lateinit var btnNextLocation : Button
-    lateinit var txtCountry : TextView
-    lateinit var autocompleteCountry : AutoCompleteTextView
+    val db = FirebaseFirestore.getInstance()
+    lateinit var btnNextLocation: Button
+
+    //Country
+    lateinit var txtCountry: String
+    lateinit var autocompleteCountry: AutoCompleteTextView
+    var countryDataList = ArrayList<String>()
+    lateinit var adapterCountry: ArrayAdapter<String>
+
+
+    //State
+    lateinit var txtState: String
+    lateinit var autocompleteState: AutoCompleteTextView
+    var stateDataList = ArrayList<String>()
+    lateinit var adapterState: ArrayAdapter<String>
+
+    //City
+    lateinit var txtCity: String
+    lateinit var autocompleteCity: AutoCompleteTextView
+    var cityDataList = ArrayList<String>()
+    lateinit var adapterCity: ArrayAdapter<String>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,49 +45,111 @@ class ChefLocationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         setContentView(R.layout.activity_chef_location)
         btnNextLocation = findViewById(R.id.btnNextLocation)
         autocompleteCountry = findViewById(R.id.autoCompleteTextViewCountry)
-        val db = FirebaseFirestore.getInstance()
-        val databaseReference = db.collection("UserCountry")
+        autocompleteState = findViewById(R.id.autoCompleteTextViewState)
+        autocompleteCity = findViewById(R.id.autoCompleteTextViewCity)
 
 
-
-        databaseReference.get().addOnCompleteListener(OnCompleteListener<QuerySnapshot>() { task ->
-            val doc = task.result
-            for (documentSnapshot in doc!!.documents) {
-                val countryName = documentSnapshot["country"].toString()
-                spinnerDataList.add(countryName)
-            }
+        //Country
+        val databaseReferenceCountry = db.collection("UserCountry")
+        databaseReferenceCountry.get()
+            .addOnCompleteListener(OnCompleteListener<QuerySnapshot>() { task ->
+                val doc = task.result
+                for (documentSnapshot in doc!!.documents) {
+                    val countryName = documentSnapshot["country"].toString()
+                    countryDataList.add(countryName)
+                }
+            })
+        adapterCountry = ArrayAdapter<String>(
+            this, android.R.layout.simple_spinner_dropdown_item, countryDataList
+        )
+        autocompleteCountry.setAdapter(adapterCountry)
+        autocompleteCountry.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
+            txtCountry = countryDataList[position]
+            getUserState(txtCountry)
         })
 
-        adapter = ArrayAdapter<String>(
-            this, android.R.layout.simple_spinner_dropdown_item, spinnerDataList
-        )
-        autocompleteCountry.setAdapter(adapter)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         btnNextLocation.setOnClickListener {
+            val currentUser = FirebaseAuth.getInstance().currentUser?.uid
+            var db = FirebaseFirestore.getInstance()
+            val documentReference =
+                db.collection("Users").document(currentUser.toString()).collection("Location")
+                    .document("location")
+
+            documentReference.update("country", txtCountry)
+            documentReference.update("state", txtState)
+            documentReference.update("city",txtCity)
+
 
         }
 
     }
 
-    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        /*selectedCountry = spCountry.selectedItem.toString()
-        val currentUser = FirebaseAuth.getInstance().currentUser?.uid
-        var db = FirebaseFirestore.getInstance()
 
-        var userLocationDetails = HashMap<String, Any>()
-        userLocationDetails["country"]=selectedCountry
-        db.collection("Users").document(currentUser.toString()).set(userLocationDetails)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this, "Location Uploaded", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
+    private fun getUserState(country: String) {
+        //State
+        val databaseReferenceState =
+            db.collection("UserState").document(country).collection("State")
+        databaseReferenceState.get()
+            .addOnCompleteListener(OnCompleteListener<QuerySnapshot>() { task ->
+                val doc = task.result
+                for (documentSnapshot in doc!!.documents) {
+                    val stateName = documentSnapshot["state"].toString()
+                    stateDataList.add(stateName)
                 }
-            }*/
+            })
+
+        adapterState = ArrayAdapter<String>(
+            this, android.R.layout.simple_spinner_dropdown_item, stateDataList
+        )
+        autocompleteState.setAdapter(adapterState)
+
+        autocompleteState.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
+
+            txtState = stateDataList[position]
+            getUserCity(txtState)
+
+        })
     }
 
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
+
+    private fun getUserCity(State: String) {
+        //State
+        val databaseReferenceCity = db.collection("UserCity").document(State).collection("City")
+        databaseReferenceCity.get()
+            .addOnCompleteListener(OnCompleteListener<QuerySnapshot>() { task ->
+                val doc = task.result
+                for (documentSnapshot in doc!!.documents) {
+                    val cityName = documentSnapshot["city"].toString()
+                    cityDataList.add(cityName)
+                }
+            })
+
+        adapterCity = ArrayAdapter<String>(
+            this, android.R.layout.simple_spinner_dropdown_item, cityDataList
+        )
+        autocompleteCity.setAdapter(adapterCity)
+
+        autocompleteCity.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
+
+            txtCity = cityDataList[position]
+
+        })
     }
+
+
 }

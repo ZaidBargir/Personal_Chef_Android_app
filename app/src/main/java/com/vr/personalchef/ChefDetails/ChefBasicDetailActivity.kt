@@ -63,7 +63,6 @@ class ChefBasicDetailActivity : AppCompatActivity() {
             userBasicDetails["phone"] = etPhoneNumber.text.toString()
             userBasicDetails["bio"] = etUserBio.text.toString()
             userBasicDetails["email"] = etUserEmail.text.toString()
-            userBasicDetails["country"] = ""
 
             db.collection("Users").document(currentUser.toString()).set(userBasicDetails)
                 .addOnCompleteListener { task ->
