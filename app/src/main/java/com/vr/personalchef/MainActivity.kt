@@ -1,9 +1,14 @@
 package com.vr.personalchef
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.vr.personalchef.Fragments.BookingFragment
 import com.vr.personalchef.Fragments.HomeFragment
 import com.vr.personalchef.Fragments.ProfileFragment
@@ -13,6 +18,8 @@ import com.vr.personalchef.GettingRecipeDetails.RecipeUploaderActivity
 class MainActivity : AppCompatActivity() {
 
     lateinit var bottomNavigationView: BottomNavigationView
+    lateinit var imgDownloadUrl: Uri
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +29,9 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.frameLayout, HomeFragment())
             .commit()
         bottomNavigationView = findViewById(R.id.bottomNavigation)
+
+
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener {
 
@@ -63,6 +73,9 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         finishAffinity()
     }
+
+
+
 
 }
 

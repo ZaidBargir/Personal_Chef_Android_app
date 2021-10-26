@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/locationActivity"
+    android:background="#151417"
+    android:orientation="vertical"
+    tools:context=".ChefDetails.ChefEducationActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/education" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Education Details"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bebasneue"
+        android:layout_marginLeft="10dp"
+        android:textSize="28sp"/>
+
+    <EditText
+        android:id="@+id/etUserEducation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_weight="1"
+        android:gravity="top|left"
+        android:background="#272727"
+        android:textCursorDrawable="@null"
+        android:padding="10dp"
+        android:cursorVisible="true"
+        android:maxLines="5"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/next_button"
+        android:fontFamily="@font/swansea"
+        android:layout_gravity="bottom"
+        android:text="Finish"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

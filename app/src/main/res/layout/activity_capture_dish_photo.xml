@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GettingRecipeDetails.RecipeDetailActivitys.CaptureDishPhotoActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#151417">
+
+
+    <TextView
+        android:id="@+id/txtStep1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 1 "
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/swansea"
+        android:textSize="18sp"/>
+
+
+    <TextView
+        android:id="@+id/txtDishPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:letterSpacing="0.2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/txtStep1"
+        android:layout_centerHorizontal="true"
+        android:text="Dish Photo"
+        android:textColor="@color/white"
+        android:fontFamily="@font/swansea"
+        android:textStyle="bold"/>
+
+
+
+    <ImageView
+        android:id="@+id/imgDishPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/custom_button"
+        android:layout_below="@id/txtDishPhoto"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationViewUpload"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/txtDishPhoto"
+        android:layout_margin="40dp"
+        android:layout_centerHorizontal="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/upload_cloud" />
+
+
+    <TextView
+        android:id="@+id/txtDishName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Dish Name"
+        android:layout_below="@id/imgDishPhoto"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white" />
+
+
+    <EditText
+        android:id="@+id/etDishName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDishName"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@null"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="20dp"
+        android:textSize="18sp"
+        android:hint="Eg : Indian Chicken Curry (Murgh Kari)"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textColorHint="#60FFFFFF" />
+
+
+
+    <TextView
+        android:id="@+id/txtDishMainIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Main Ingredient"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/etDishName"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/etMainIngredient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtDishMainIngredient"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Eg : Chicken"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@null"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textColorHint="#60FFFFFF" />
+
+    <TextView
+        android:id="@+id/txtDishRecipeIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Ingredient List"
+        android:textSize="18sp"
+        android:layout_below="@id/etMainIngredient"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white" />
+
+
+    <EditText
+        android:id="@+id/etDishRecipeList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtDishRecipeIngredients"
+        android:layout_marginLeft="20dp"
+      android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:gravity="top|left"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@null"
+        android:layout_marginBottom="20dp"
+        android:hint="Eg :                                                                       1: 2 pounds skinless                                          2: 2 teaspoons salt                                                3: ½ cup cooking oil "
+        android:textColor="@color/white"
+        android:textColorHint="#60FFFFFF" />
+
+
+
+    <TextView
+        android:id="@+id/txtDishDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Dish Direction"
+        android:textSize="18sp"
+        android:layout_below="@id/etDishRecipeList"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/etDishRecipeDirection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtDishDirection"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="top|left"
+        android:cursorVisible="true"
+        android:layout_marginTop="10dp"
+        android:textCursorDrawable="@null"
+        android:layout_marginBottom="20dp"
+        android:hint="@string/recipe_direection"
+        android:textColor="@color/white"
+        android:textColorHint="#23FFFFFF" />
+
+
+
+
+    <Button
+        android:id="@+id/btnUploadDish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Next"
+        android:layout_below="@id/etDishRecipeDirection"
+        android:background="@drawable/dish_upload_window"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:letterSpacing="0.4"
+        android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

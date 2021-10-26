@@ -1,5 +1,6 @@
 package com.vr.personalchef.ChefDetails
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
@@ -62,7 +63,11 @@ class ChefLocationActivity : AppCompatActivity() {
         adapterCountry = ArrayAdapter<String>(
             this, android.R.layout.simple_spinner_dropdown_item, countryDataList
         )
+
         autocompleteCountry.setAdapter(adapterCountry)
+
+        autocompleteCountry.threshold = 1
+
         autocompleteCountry.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
             txtCountry = countryDataList[position]
             getUserState(txtCountry)
@@ -95,6 +100,8 @@ class ChefLocationActivity : AppCompatActivity() {
             documentReference.update("city",txtCity)
 
 
+            val i = Intent(this,ChefEducationActivity::class.java)
+            startActivity(i)
         }
 
     }
@@ -117,6 +124,8 @@ class ChefLocationActivity : AppCompatActivity() {
             this, android.R.layout.simple_spinner_dropdown_item, stateDataList
         )
         autocompleteState.setAdapter(adapterState)
+
+        autocompleteState.threshold = 1
 
         autocompleteState.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
 
@@ -143,6 +152,8 @@ class ChefLocationActivity : AppCompatActivity() {
             this, android.R.layout.simple_spinner_dropdown_item, cityDataList
         )
         autocompleteCity.setAdapter(adapterCity)
+
+        autocompleteCity.threshold = 1
 
         autocompleteCity.setOnItemClickListener(OnItemClickListener { parent, view, position, id ->
 

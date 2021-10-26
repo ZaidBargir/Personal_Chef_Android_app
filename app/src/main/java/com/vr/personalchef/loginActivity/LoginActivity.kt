@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
                 .setTheme(R.style.FirebaseUITheme)
                 .setAvailableProviders(providers)
                 .setIsSmartLockEnabled(false)
-                .setLogo(R.drawable.personalchef_logo)
+                .setLogo(R.drawable.personalcheflogo)
                 .build(),
             123
         )

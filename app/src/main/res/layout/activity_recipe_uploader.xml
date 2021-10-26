@@ -7,51 +7,26 @@
     android:background="#151417"
     tools:context=".GettingRecipeDetails.RecipeUploaderActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:lottie_autoPlay="true"
-        android:layout_centerHorizontal="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/chef1" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/indicator" />
 
 
-    <TextView
-        android:id="@+id/txtUploadDishPhoto"
+    <com.rd.PageIndicatorView
+        android:id="@+id/indicator"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/animationView"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/swansea"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="true"
-        android:text="Upload Your dish Photo"
-        android:textColor="@color/white"
-        android:textSize="22sp" />
-
-    <ImageView
-        android:id="@+id/imgDishPhotoUpload"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/upload_file"
-        android:layout_below="@id/txtUploadDishPhoto"
-        android:layout_margin="20dp"/>
-
-    <Button
-        android:id="@+id/btnNextToDescription"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:background="@drawable/next_button"
-        android:fontFamily="@font/swansea"
-        android:text="NEXT"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
-
-
+        android:layout_margin="16dp"
+        app:piv_animationType="worm"
+        app:piv_radius="5dp"
+        app:piv_selectedColor="#D49A3D"
+        app:piv_strokeWidth="5dp"
+        app:piv_unselectedColor="@color/white"
+        app:piv_viewPager="@id/viewpager" />
 
 
 </RelativeLayout>
