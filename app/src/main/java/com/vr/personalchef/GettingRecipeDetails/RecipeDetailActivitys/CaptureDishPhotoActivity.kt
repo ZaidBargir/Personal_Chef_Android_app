@@ -93,12 +93,20 @@ class CaptureDishPhotoActivity : AppCompatActivity() {
 
 
 
+            db.collection("AllDetails").document(dishName).set(recipeDetails)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Please Wait", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
 
             db.collection("UserRecipeDetail").document(currentUser.toString())
                 .collection("Dishes").document(etDishName.text.toString()).set(recipeDetails)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this, "Uploading Please Wait", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Uploading", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                     }

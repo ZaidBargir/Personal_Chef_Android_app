@@ -38,8 +38,12 @@ class ChefEducationActivity : AppCompatActivity() {
                 db.collection("Users").document(currentUser.toString()).collection("Education")
                     .document("usereducation")
 
+
+
             var userEducationDetails = HashMap<String, Any>()
             userEducationDetails["education"] = etUserEducation.text.toString()
+
+
 
             documentReference.set(userEducationDetails).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -49,7 +53,7 @@ class ChefEducationActivity : AppCompatActivity() {
                 }
             }
 
-            val i = Intent(this,MainActivity::class.java)
+            val i = Intent(this, MainActivity::class.java)
             startActivity(i)
 
         }

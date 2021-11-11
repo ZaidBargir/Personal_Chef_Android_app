@@ -91,6 +91,9 @@ class ChefLocationActivity : AppCompatActivity() {
         btnNextLocation.setOnClickListener {
             val currentUser = FirebaseAuth.getInstance().currentUser?.uid
             var db = FirebaseFirestore.getInstance()
+
+
+
             val documentReference =
                 db.collection("Users").document(currentUser.toString()).collection("Location")
                     .document("location")
@@ -98,6 +101,8 @@ class ChefLocationActivity : AppCompatActivity() {
             documentReference.update("country", txtCountry)
             documentReference.update("state", txtState)
             documentReference.update("city",txtCity)
+
+
 
 
             val i = Intent(this,ChefEducationActivity::class.java)

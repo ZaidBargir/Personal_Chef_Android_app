@@ -47,6 +47,10 @@ class RecipeDoneActivity : AppCompatActivity() {
                     .collection("Dishes")
                     .document(dishName)
 
+            val documentReferenceAllDetails =  db.collection("AllDetails").document(dishName)
+
+
+            documentReferenceAllDetails.update("imgurl",imgDownloadUrl.toString())
             documentReference.update("imgurl",imgDownloadUrl.toString())
 
             val i = Intent(this,MainActivity::class.java)

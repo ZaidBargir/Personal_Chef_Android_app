@@ -64,10 +64,11 @@ class ChefBasicDetailActivity : AppCompatActivity() {
             userBasicDetails["bio"] = etUserBio.text.toString()
             userBasicDetails["email"] = etUserEmail.text.toString()
 
+
             db.collection("Users").document(currentUser.toString()).set(userBasicDetails)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this, "Data Uploaded", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Uploaded", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                     }
