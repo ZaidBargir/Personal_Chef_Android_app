@@ -27,4 +27,22 @@
         android:textSize="17sp" />
 
 
+    <TextView
+        android:id="@+id/txtRecipeMainIngredientRecyclerView"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtRecipeListRecyclerView"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtRecipeDirectionRecyclerView"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+
 </RelativeLayout>

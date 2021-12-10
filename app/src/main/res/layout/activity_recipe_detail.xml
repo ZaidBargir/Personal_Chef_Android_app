@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151417"
+    tools:context=".RecipeDetails.RecipeDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtDishNameDetailActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Dish Name loading.."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/imgDishPhotoDetailActivity"
+                android:layout_width="250dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/txtDishNameDetailActivity"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dish_image" />
+
+
+            <TextView
+                android:id="@+id/txtIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgDishPhotoDetailActivity"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/swansea"
+                android:text="MAIN INGREDIENT :"
+                android:textColor="#D49A3D"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtRecipeMainIngredientDetailActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgDishPhotoDetailActivity"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/txtIngredient"
+                android:fontFamily="@font/swansea"
+                android:text="Ingredient Name loading.."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtIngredientList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtIngredient"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/swansea"
+                android:text="INGREDIENT LIST :"
+                android:textColor="#D49A3D"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtRecipeIngredientListDetailActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtIngredientList"
+                android:layout_marginLeft="16dp"
+                android:text="Ingredient List loading.."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/txtRecipeDirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtRecipeIngredientListDetailActivity"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/swansea"
+                android:text="RECIPE DIRECTION :"
+                android:textColor="#D49A3D"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/txtRecipeDirectionDetailActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtRecipeDirect"
+                android:layout_marginLeft="16dp"
+                android:text="Recipe direction details loading.."
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

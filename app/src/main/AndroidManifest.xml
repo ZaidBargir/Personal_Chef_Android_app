@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalChef">
-        <activity android:name=".GettingRecipeDetails.RecipeDetailActivitys.RecipeDoneActivity"></activity>
+        <activity android:name=".RecipeDetails.RecipeDetailActivity"></activity>
+        <activity android:name=".GettingRecipeDetails.RecipeDetailActivitys.RecipeDoneActivity" />
         <activity android:name=".GettingRecipeDetails.RecipeDetailActivitys.CaptureDishPhotoActivity" />
         <activity android:name=".ChefDetails.ChefEducationActivity" />
         <activity android:name=".ChefDetails.ChefLocationActivity" />
