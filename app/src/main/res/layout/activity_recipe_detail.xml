@@ -58,9 +58,9 @@
                 android:layout_marginTop="16dp"
                 android:layout_toRightOf="@id/txtIngredient"
                 android:fontFamily="@font/swansea"
-                android:text="Ingredient Name loading.."
+                android:text="loading.."
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -81,9 +81,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtIngredientList"
                 android:layout_marginLeft="16dp"
-                android:text="Ingredient List loading.."
+                android:text="loading.."
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
 
@@ -106,9 +106,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtRecipeDirect"
                 android:layout_marginLeft="16dp"
-                android:text="Recipe direction details loading.."
+                android:text="details loading.."
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
 

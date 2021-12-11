@@ -19,6 +19,7 @@ import com.vr.personalchef.HomeFragmentRecyclerView.MyAdapterHomeFragment
 import com.vr.personalchef.HomeFragmentRecyclerView.Recipe
 import com.vr.personalchef.HomeFragmentRecyclerView.onRecipeItemClickListener
 import com.vr.personalchef.R
+import com.vr.personalchef.RecipeDetails.RecipeDetailActivity
 
 
 class HomeFragment : Fragment(), onRecipeItemClickListener {
@@ -77,7 +78,13 @@ class HomeFragment : Fragment(), onRecipeItemClickListener {
 
     override fun onItemClick(recipeList: Recipe, position: Int) {
 
-        Toast.makeText(activity, "Clicked", Toast.LENGTH_LONG).show()
+        val i = Intent(activity, RecipeDetailActivity::class.java)
+        i.putExtra("dishname",recipeList.dishname)
+        i.putExtra("imgurl",recipeList.imgurl)
+        i.putExtra("mainingredient",recipeList.mainingredient)
+        i.putExtra("recipelist",recipeList.recipelist)
+        i.putExtra("direction",recipeList.direction)
+        startActivity(i)
 
 
     }
